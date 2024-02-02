@@ -1,0 +1,19 @@
+public static void miniMaxSum(List<Integer> arr) {
+long sum = 0;
+for (int n : arr) {
+    sum += n;
+}
+long max = -1;
+long min = -1;
+for (int n : arr) {
+    long partSum = sum - n;
+    if (max < partSum) {
+        max = partSum;
+    }
+    if (min > partSum || min == -1) {
+        min = partSum;
+    }
+}
+
+System.out.printf("%d %d",min,max);
+}
